@@ -8,13 +8,13 @@ public class Car {
     private int productionYear;
     private String productionCountry;
 
-    public Car(String brand, String model, int year, String country, String color, Double engineVolume) {
-        this.brand = brand;
-        this.model = model;
-        this.productionYear = year;
-        this.productionCountry = country;
-        this.color = color;
-        this.engineVolume = engineVolume;
+    public Car(String brand, String model, int productionYear, String productionCountry, String color, Double engineVolume) {
+        this.brand = brand.trim();
+        this.model = model.trim();
+        this.productionYear = Math.abs(productionYear);
+        this.productionCountry = productionCountry.trim();
+        this.color = color.trim();
+        this.engineVolume = Math.abs(engineVolume);
     }
 
     @Override

@@ -7,10 +7,10 @@ public class Human {
     private String jobTitle;
 
     public Human(String name, String town, int yearOfBirth, String jobTitle) {
-        this.name = name;
-        this.town = town;
-        this.yearOfBirth = yearOfBirth;
-        this.jobTitle = jobTitle;
+        this.name = name.trim();
+        this.town = town.trim();
+        this.yearOfBirth = Math.abs(yearOfBirth);
+        this.jobTitle = jobTitle.trim();
     }
 
     public void greetings() {
