@@ -6,11 +6,16 @@ public class Human {
     private String town;
     private String jobTitle;
 
+    public Human(String name, String town, String jobTitle) {
+        this(name, town, 0, jobTitle);
+    }
+
+
     public Human(String name, String town, int yearOfBirth, String jobTitle) {
-        this.name = name.trim();
-        this.town = town.trim();
+        this.name = name == null ? "\'Информация не указана\'" : name.trim();
+        this.town = town == null || town.trim().isEmpty() ? "\'Информация не указана\'" : town.trim();
         this.yearOfBirth = Math.abs(yearOfBirth);
-        this.jobTitle = jobTitle.trim();
+        this.jobTitle = jobTitle == null || jobTitle.trim().isEmpty() ? "\'Информация не указана\'" : jobTitle.trim();
     }
 
     public void greetings() {
@@ -21,7 +26,7 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Human{" +
+        return "Человек {" +
                 " Имя=" + name +
                 ", город='" + town + '\'' +
                 ", год рождения='" + yearOfBirth + '\'' +
